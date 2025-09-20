@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login & Signup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #cdacf0 0%, #f7edeb 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .auth-container {
+      background: white;
+      padding: 40px 35px;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(37, 37, 37, 0.15);
+      width: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    h2 {
+      margin-bottom: 0.8em;
+      font-weight: 700;
+      color: #060673;
+      text-align: center;
+      letter-spacing: 1.9px;
+      font-size: 28px;
+      user-select: none;
+    }
+    label {
+      color: #555;
+      font-weight: 600;
+      margin-top: 12px;
+      display: block;
+    }
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 100%;
+      padding: 14px 12px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      border: 1.8px solid #ddd;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      outline: none;
+    }
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+      border-color: #3b3b98;
+      box-shadow: 0 0 12px rgba(59, 59, 152, 0.5);
+    }
+    button {
+      width: 100%;
+      padding: 14px 0;
+      margin-top: 10px;
+      background: linear-gradient(115deg, #e92222, #e32f2f);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(59,59,152,0.6);
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    button:hover {
+      background: linear-gradient(115deg, #3ee844, #47ee74);
+    }
+    p#login-error-message, p#signup-error-message {
+      font-weight: 600;
+      color: crimson;
+      text-align: center;
+      height: 20px;
+      margin-top: 4px;
+      user-select: none;
+    }
+    p.toggle-link {
+      margin-top: 18px;
+      text-align: center;
+      color: #3b3b98;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.7px;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    p.toggle-link:hover {
+      text-decoration: underline;
+      color: #1c1445;
+    }
+    #signupForm {
+      display: none;
+    }
+    .fade-in {
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .fade-out {
+      animation: fadeOut 0.4s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeOut {
+      from {opacity: 1;}
+      to {opacity: 0;}
+    }
+    .back-home-btn {
+  display: block;
+  margin: 18px auto 0;
+  padding: 12px 28px;
+  background: linear-gradient(115deg, #3b3b98, #1c1445);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  width: max-content;
+  transition: background 0.3s ease;
+}
+.back-home-btn:hover {
+  background: linear-gradient(115deg, #4e32dd, #3b3b98);
+  text-decoration: none;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Login Form -->
+    <form id="adminLoginForm" autocomplete="off">
+      <h2>Admin Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter admin username" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required />
+      <button type="submit">Login</button>
+      <p id="login-error-message"></p>
+      <p class="toggle-link" id="showSignupBtn">Don't have an account? Sign Up</p>
+      <a href="sih.html" class="back-home-btn">Back to Home</a>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" autocomplete="off">
+      <h2>Admin Signup</h2>
+      <label for="signupUsername">Username:</label>
+      <input type="text" id="signupUsername" name="signupUsername" placeholder="Enter username" required />
+      <label for="signupEmail">Email:</label>
+      <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter email" required />
+      <label for="signupPassword">Create Password:</label>
+      <input type="password" id="signupPassword" name="signupPassword" placeholder="Create password" required />
+      <label for="signupConfirmPassword">Confirm Password:</label>
+      <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" placeholder="Confirm password" required />
+      <button type="submit">Sign Up</button>
+      <p id="signup-error-message"></p>
+      <p class="toggle-link" id="showLoginBtn">Already have an account? Sign In</p>
+      <a href="sih.html" class="back-home-btn">Back to Home</a>
+
+
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('adminLoginForm');
+    const signupForm = document.getElementById('signupForm');
+    const showSignupBtn = document.getElementById('showSignupBtn');
+    const showLoginBtn = document.getElementById('showLoginBtn');
+    const loginError = document.getElementById('login-error-message');
+    const signupError = document.getElementById('signup-error-message');
+
+    // Toggle to signup form
+    showSignupBtn.addEventListener('click', () => {
+      loginForm.classList.add('fade-out');
+      setTimeout(() => {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+        signupForm.classList.remove('fade-out');
+        signupForm.classList.add('fade-in');
+        loginError.textContent = '';
+        loginForm.classList.remove('fade-out');
+        signupError.textContent = '';
+      }, 400);
+    });
+
+    // Toggle to login form
+    showLoginBtn.addEventListener('click', () => {
+      signupForm.classList.add('fade-out');
+      setTimeout(() => {
+        signupForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        loginForm.classList.remove('fade-out');
+        loginForm.classList.add('fade-in');
+        signupError.textContent = '';
+        signupForm.classList.remove('fade-out');
+        loginError.textContent = '';
+      }, 400);
+    });
+
+    // Validate login
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      const storedUsers = JSON.parse(localStorage.getItem('adminUsers')) || [];
+      const user = storedUsers.find(u => u.username === username && u.password === password);
+
+      if (user) {
+        loginError.textContent = '';
+        alert('Login successful! Redirecting to dashboard...');
+        window.location.href = 'sih3.html';
+      } else {
+        loginError.textContent = 'Invalid username or password';
+      }
+    });
+
+    // Validate signup
+    signupForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('signupUsername').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const password = document.getElementById('signupPassword').value;
+      const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+      if (username.length < 3) {
+        signupError.textContent = 'Username must be at least 3 characters';
+        return;
+      }
+      if (!validateEmail(email)) {
+        signupError.textContent = 'Please enter a valid email address';
+        return;
+      }
+      if (password.length < 6) {
+        signupError.textContent = 'Password must be at least 6 characters';
+        return;
+      }
+      if (password !== confirmPassword) {
+        signupError.textContent = 'Passwords do not match';
+        return;
+      }
+
+      let storedUsers = JSON.parse(localStorage.getItem('adminUsers')) || [];
+      if (storedUsers.some(u => u.username === username)) {
+        signupError.textContent = 'Username already exists';
+        return;
+      }
+
+      storedUsers.push({ username, email, password });
+      localStorage.setItem('adminUsers', JSON.stringify(storedUsers));
+
+      signupError.textContent = '';
+      alert('Signup successful! You can now login.');
+      signupForm.reset();
+      showLoginBtn.click();
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>

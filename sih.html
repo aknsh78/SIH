@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rural E-Complaint Portal</title>
+<link  rel="stylesheet"href="style.css">
+<style>
+/* Sidebar styling */
+  .sidebar {
+    height: 100%; /* Full height */
+    width: 0; /* Start closed */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* On top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Dark background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content below top */
+    transition: 0.5s; /* Smooth open/close */
+  }
+  .sidebar a {
+    padding: 8px 32px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Hamburger button */
+  #main button {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #111;
+    padding: 10px 15px;
+    transition: 0.3s;
+  }
+  #main button:hover {
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<div id="main" style="border-color: #9a590f;">
+  <button onclick="openNav()">☰</button>
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <button class="closebtn" onclick="closeNav()">×</button>
+  
+  <a href="contact.html">☎️ Contact Us</a>
+  <a href="help.html">❓ Help & Support</a>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+
+
+  <!-- Rest of your HTML content here such as top-header, header-main, nav-bar, main sections, footer, scripts -->
+
+  
+
+  <!-- ... rest of your page ... -->
+
+  <script>
+    const openBtn = document.getElementById('openMenuBtn');
+    const closeBtn = document.getElementById('closeMenuBtn');
+    const sidebar = document.getElementById('sidebar');
+
+    openBtn.onclick = () => sidebar.classList.add('active');
+    closeBtn.onclick = () => sidebar.classList.remove('active');
+
+    document.addEventListener('click', e => {
+      if (
+        sidebar.classList.contains('active') &&
+        !sidebar.contains(e.target) &&
+        !openBtn.contains(e.target)
+      ) {
+        sidebar.classList.remove('active');
+      }
+    });
+  </script>
+
+  <script src="java.js"></script>
+</body>
+
+
+
+
+
+<div class="top-header">
+  भारत सरकार | Government of India
+</div>
+
+<div class="header-main">
+  <img src="https://uxwing.com/wp-content/themes/uxwing/download/flags-landmarks/india-flag-icon.png" alt="Indian Flag" />
+  <div class="department">
+    प्रशासनिक सुधार और लोक शिकायत विभाग हेतु<br />
+    <span class="highlight">Rural</span><br />
+    E-Complaint Portal
+  </div>
+  <div>
+    <div class="cpgrams">LocalJansunwai</div>
+    <div class="desc">Local Public Grievance Redress And Monitoring System</div>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <marquee><div class="nav-left">Report local issues quickly and easily — Your voice matters! Community alert: Report potholes, water problems, noise, and other concerns.</div></marquee>
+  <div class="nav-right">
+    <a href="sih2.html" target="_blank" rel="noopener noreferrer">
+    <button class="sign-in-btn">Admin Login</button>
+  </a>
+  <a href="userlogin.html" target="_blank" rel="noopener noreferrer">
+  <button class="sign-in-btn">User Login</button>
+</a>
+
+
+  </div>
+</div>
+<br>
+  <!--
+
+<div class="image-row">
+  <img src="https://cdni.iconscout.com/illustration/premium/thumb/woman-working-for-complaint-resolution-illustration-download-in-svg-png-gif-file-formats--help-desk-customer-care-clients-support-service-pack-network-communication-illustrations-11394621.png" width="350" height="360">
+  
+  <img src="https://cdni.iconscout.com/illustration/premium/thumb/male-customer-write-complaint-form-illustration-download-in-svg-png-gif-file-formats--user-dissatisfaction-pack-people-illustrations-10042660.png?f=webp"alt="Image 1" />
+  <img src="https://cdni.iconscout.com/illustration/premium/thumb/complaint-resolution-specialist-handling-customer-complaints-and-working-to-resolve-them-illustration-download-in-svg-png-gif-file-formats--support-pack-services-illustrations-7342868.png?f=webp" height="360" width="400">
+   <img src="image3.jpg" alt="Image 3" />
+ 
+
+  
+  <img src="image4.jpg" alt="Image 4" />
+   add more images as needed -->
+</div>
+
+</div>
+
+
+
+
+<main>
+  <section id="aboutUs">
+    <h2 class="section-header">ABOUT US</h2>
+    <p>
+      Our platform is dedicated to empowering citizens by providing an easy and efficient way to report everyday civic issues such as potholes, broken streetlights, and overflowing garbage bins. We believe that local communities thrive when citizens and governments work together collaboratively. With a user-friendly mobile-first design, our system enables real-time reporting with photos and precise location details, ensuring that municipal authorities receive accurate information quickly. We aim to bridge the communication gap between residents and local government departments by offering transparent tracking and timely updates on reported issues. Our goal is to increase accountability, improve response times, and foster greater citizen participation in maintaining and enhancing community infrastructure. By simplifying the reporting process and providing effective resolution tracking, we help build safer, cleaner, and more livable cities. Join us in making a difference—your reports help shape better cities for all.
+    </p>
+  </section>
+
+  <section id="welcomeScreen" class="hero">
+    <h2>Voice of the Rural Community</h2>
+    <p>Register complaints and grievances easily. Help us make your village a better place to live.</p>
+
+    <div class="btn-group">
+      <button class="section-btn" onclick="showSection('formSection')">
+        <img src="https://cdn-icons-png.freepik.com/256/16939/16939359.png?semt=ais_white_label" alt="Lodge a Complaint" />
+        Lodge a Complaint
+      </button>
+      <button class="section-btn" onclick="showSection('statusSection')">
+        <img src="https://www.awicons.com/free-icons/download/system-icons/pleasant-icons-by-harwen-zhang/png/128/Search.png" alt="Track Complaint Status" />
+        Track Complaint Status
+      </button>
+      <button class="section-btn" onclick="showSection('infoSection')">
+        <img src="https://cdn-icons-png.freepik.com/256/8392/8392155.png?semt=ais_white_label" alt="General Information" />
+        General Information
+      </button>
+      <button class="section-btn" onclick="showSection('adminSection')">
+        <img src="https://cdn-icons-png.freepik.com/256/17003/17003310.png?semt=ais_white_label" alt="Admin Dashboard" />
+        Admin Dashboard
+      </button>
+    </div>
+  </section>
+
+  <section id="formSection" class="hidden">
+    <form id="complaintForm">
+      <h2>Lodge a Complaint</h2>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="tel" id="mobile" placeholder="Mobile Number" pattern="\d{10,}" required />
+      <input type="text" id="village" placeholder="Village/Town" required />
+      <input type="text" id="district" placeholder="District" required />
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option>Electricity</option>
+        <option>Water</option>
+        <option>Transportation</option>
+        <option>Others</option>
+      </select>
+      <textarea id="description" placeholder="Describe the problem..." rows="3" required></textarea>
+      <input type="file" accept=".jpg,.png,.pdf" id="attach" />
+      <label><input type="checkbox" id="anonymous" /> Submit anonymously</label>
+      <button type="submit">Submit Complaint</button>
+      <p id="formResult" class="form-result"></p>
+      <button type="button" onclick="showSection('welcomeScreen')">Back to Home</button>
+    </form>
+  </section>
+
+  <section id="statusSection" class="hidden">
+    <h2>Track Your Complaint</h2>
+    <input type="text" id="trackInput" placeholder="Enter Complaint ID or Mobile" />
+    <button id="trackBtn">Track Status</button>
+    <p id="statusResult"></p>
+    <button id="remindBtn" style="display:none;">Send Reminder</button>
+    <button onclick="showSection('welcomeScreen')">Back to Home</button>
+  </section>
+
+  <section id="infoSection" class="hidden">
+    <h2>General Information</h2>
+    <ul>
+      <li>This portal is for rural residents to lodge problems related to electricity, water, transportation, and other civic issues.</li>
+      <li>Complaints are reviewed by respective authorities and updated regularly.</li>
+      <li>You can track your complaint status using Complaint ID or mobile number.</li>
+      <li>For urgent issues, contact your local Panchayat office or helpline directly.</li>
+    </ul>
+    <button onclick="showSection('welcomeScreen')">Back to Home</button>
+  </section>
+
+  <section id="adminSection" class="hidden">
+    <h2>Admin Dashboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint ID</th>
+          <th>Name/Village</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="adminTable">
+        <tr><td colspan="5">No complaints yet</td></tr>
+      </tbody>
+    </table>
+    <button onclick="showSection('welcomeScreen')">Back to Home</button>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Rural E-Complaint System | Phone: +91-XXXXX-XXXXX | Email: complaints@grampanchayat.gov.in</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    ["welcomeScreen", "formSection", "statusSection", "infoSection", "adminSection"].forEach(section => {
+      document.getElementById(section).classList.add("hidden");
+    });
+    document.getElementById(id).classList.remove("hidden");
+  }
+
+  const complaints = [];
+
+  document.getElementById("complaintForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const anon = document.getElementById("anonymous").checked;
+    const name = anon ? "Anonymous" : document.getElementById("name").value.trim();
+    const mobile = anon ? "N/A" : document.getElementById("mobile").value.trim();
+    const village = document.getElementById("village").value.trim();
+    const district = document.getElementById("district").value.trim();
+    const category = document.getElementById("category").value;
+    const description = document.getElementById("description").value.trim();
+    const attach = document.getElementById("attach").files[0];
+    const resultElem = document.getElementById("formResult");
+
+    let error = "";
+    if (!anon && (!name || !/^\d{10,}$/.test(mobile))) error += "Provide name and valid mobile. ";
+    if (!village) error += "Village/Town is required. ";
+    if (!district) error += "District is required. ";
+    if (!category) error += "Select a category. ";
+    if (!description) error += "Description is required. ";
+    if (attach && attach.size > 5 * 1024 * 1024) error += "Attachment max size 5MB. ";
+
+    if (error) {
+      resultElem.textContent = error;
+      resultElem.style.color = "red";
+      return;
+    }
+
+    const cid = "R-" + Math.floor(Math.random() * 1e6);
+    complaints.push({
+      id: cid,
+      name,
+      mobile,
+      village,
+      district,
+      category,
+      description,
+      status: "Received"
+    });
+
+    resultElem.textContent = `Complaint Submitted! Your complaint ID: ${cid}`;
+    resultElem.style.color = "green";
+
+    this.reset();
+
+    setTimeout(() => {
+      resultElem.textContent = "";
+    }, 7000);
+    showSection("welcomeScreen");
+  });
+
+  document.getElementById("trackBtn").addEventListener("click", function() {
+    const input = document.getElementById("trackInput").value.trim().toLowerCase();
+    const res = document.getElementById("statusResult");
+    const remindBtn = document.getElementById("remindBtn");
+    const found = complaints.find(c => c.id.toLowerCase() === input || c.mobile === input);
+
+    if (found) {
+      res.textContent = `Complaint (${found.id}) for ${found.category}: Status is "${found.status}".`;
+      res.style.color = "black";
+      if (found.status !== "Solved") {
+        remindBtn.style.display = "block";
+        remindBtn.onclick = () => alert("Reminder sent for complaint " + found.id);
+      } else {
+        remindBtn.style.display = "none";
+      }
+    } else {
+      res.textContent = "Complaint not found. Please check your ID or mobile.";
+      res.style.color = "red";
+      remindBtn.style.display = "none";
+    }
+  });
+
+  function renderAdminTable() {
+    const tableBody = document.getElementById("adminTable");
+    if (!complaints.length) {
+      tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#999;">No complaints yet</td></tr>`;
+      return;
+    }
+    tableBody.innerHTML = "";
+    complaints.forEach(c => {
+      tableBody.innerHTML += `
+        <tr>
+          <td>${c.id}</td>
+          <td>${c.name}<br><small>${c.village}</small></td>
+          <td>${c.category}</td>
+          <td><span class="${c.status === 'Solved' ? 'status-solved' : 'status-pending'}">${c.status}</span></td>
+          <td>
+            <button onclick="updateStatus('${c.id}', 'Solved')" style="background:#4CAF50; color:white; border:none;padding:6px 12px; border-radius:6px; margin-bottom:4px; cursor:pointer;">Mark Solved</button>
+            <button onclick="updateStatus('${c.id}', 'Under Review')" style="background:#007bff; color:white; border:none;padding:6px 12px; border-radius:6px; cursor:pointer;">Under Review</button>
+          </td>
+        </tr>`;
+    });
+  }
+
+  function updateStatus(id, status) {
+    const c = complaints.find(c => c.id === id);
+    if (c) c.status = status;
+    renderAdminTable();
+  }
+
+  document.querySelector('button.section-btn[onclick="showSection(\'adminSection\')"]').addEventListener("click", renderAdminTable);
+
+  document.getElementById("anonymous").addEventListener("change", function() {
+    const req = !this.checked;
+    document.getElementById("name").required = req;
+    document.getElementById("mobile").required = req;
+  });
+</script>
+<script src="menu.js"></script>
+
+</body>
+</html>

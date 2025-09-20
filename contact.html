@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - Rural E-Complaint Portal</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0; padding: 0;
+    color: #333;
+  }
+  .container {
+    max-width: 700px;
+    background: white;
+    margin: 50px auto;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+  h1 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+  }
+  .contact-info {
+    margin-bottom: 25px;
+  }
+  .contact-info div {
+    margin: 8px 0;
+    font-size: 1.15rem;
+  }
+  .contact-info span {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #f37335; /* Indian theme orange */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 12px 18px;
+    margin-bottom: 15px;
+    border: 1.8px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.3s;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #f37335;
+    outline: none;
+  }
+  textarea {
+    min-height: 110px;
+  }
+  button[type="submit"] {
+    background: #f37335;
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background: #d55c25;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Contact Us</h1>
+
+  <div class="contact-info">
+    <div><span>📞 Phone:</span> +91-98765-43210</div>
+    <div><span>✉️ Email:</span> support@ruralecomplaint.in</div>
+    <div><span>📍 Address:</span> Gram Panchayat Office, Village XYZ, District ABC, India</div>
+  </div>
+
+  <form id="contactForm" onsubmit="return false;">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<script>
+  // Simple form feedback
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for reaching out. We will get back to you soon.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
