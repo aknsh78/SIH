@@ -41,6 +41,69 @@
     border: none;
     cursor: pointer;
   }
+  #statusSection {
+    text-align: center;  /* centers inline elements inside the section */
+    padding: 30px 0;
+    background: #f9faff;
+}
+
+#statusSection button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(74 144 226 / 0.4);
+}
+
+#statusSection button:hover {
+    background-color: #357ab7;
+}
+ #infoSection {
+    text-align: center;  /* centers inline elements inside the section */
+    padding: 30px 0;
+    background: #f9faff;
+}
+
+#infoSection button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(74 144 226 / 0.4);
+}
+
+#infoSection button:hover {
+    background-color: #357ab7;
+}
+  #adminSection {
+    text-align: center;  /* centers inline elements inside the section */
+    padding: 30px 0;
+    background: #f9faff;
+}
+
+#adminSection button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgb(74 144 226 / 0.4);
+}
+
+#adminSection button:hover {
+    background-color: #357ab7;
+}
 
   /* Hamburger button */
   #main button {
@@ -79,12 +142,6 @@ function closeNav() {
 }
 </script>
 
-
-  <!-- Rest of your HTML content here such as top-header, header-main, nav-bar, main sections, footer, scripts -->
-
-  
-
-  <!-- ... rest of your page ... -->
 
   <script>
     const openBtn = document.getElementById('openMenuBtn');
@@ -143,19 +200,7 @@ function closeNav() {
   </div>
 </div>
 <br>
-  <!--
 
-<div class="image-row">
-  <img src="https://cdni.iconscout.com/illustration/premium/thumb/woman-working-for-complaint-resolution-illustration-download-in-svg-png-gif-file-formats--help-desk-customer-care-clients-support-service-pack-network-communication-illustrations-11394621.png" width="350" height="360">
-  
-  <img src="https://cdni.iconscout.com/illustration/premium/thumb/male-customer-write-complaint-form-illustration-download-in-svg-png-gif-file-formats--user-dissatisfaction-pack-people-illustrations-10042660.png?f=webp"alt="Image 1" />
-  <img src="https://cdni.iconscout.com/illustration/premium/thumb/complaint-resolution-specialist-handling-customer-complaints-and-working-to-resolve-them-illustration-download-in-svg-png-gif-file-formats--support-pack-services-illustrations-7342868.png?f=webp" height="360" width="400">
-   <img src="image3.jpg" alt="Image 3" />
- 
-
-  
-  <img src="image4.jpg" alt="Image 4" />
-   add more images as needed -->
 </div>
 
 </div>
@@ -198,68 +243,29 @@ function closeNav() {
   <section id="formSection" class="hidden">
     <form id="complaintForm">
       <h2>Lodge a Complaint</h2>
-      <input type="text" id="name" placeholder="Name" required />
-      <input type="tel" id="mobile" placeholder="Mobile Number" pattern="\d{10,}" required />
-      <input type="text" id="village" placeholder="Village/Town" required />
-      <input type="text" id="district" placeholder="District" required />
-      <select id="category" required>
-        <option value="">Select Category</option>
-        <option>Electricity</option>
-        <option>Water</option>
-        <option>Transportation</option>
-        <option>Others</option>
-      </select>
-      <textarea id="description" placeholder="Describe the problem..." rows="3" required></textarea>
-      <input type="file" accept=".jpg,.png,.pdf" id="attach" />
-      <label><input type="checkbox" id="anonymous" /> Submit anonymously</label>
-      <button type="submit">Submit Complaint</button>
-      <p id="formResult" class="form-result"></p>
-      <button type="button" onclick="showSection('welcomeScreen')">Back to Home</button>
-    </form>
+      <button onclick="window.location.href='lodge.html'">Lodge a Complain</button>
+
   </section>
 
   <section id="statusSection" class="hidden">
     <h2>Track Your Complaint</h2>
-    <input type="text" id="trackInput" placeholder="Enter Complaint ID or Mobile" />
-    <button id="trackBtn">Track Status</button>
-    <p id="statusResult"></p>
-    <button id="remindBtn" style="display:none;">Send Reminder</button>
-    <button onclick="showSection('welcomeScreen')">Back to Home</button>
-  </section>
+    <button onclick="window.location.href='trackcomp.html'">Track complaint</button>
+</section>
+
 
   <section id="infoSection" class="hidden">
-    <h2>General Information</h2>
-    <ul>
-      <li>This portal is for rural residents to lodge problems related to electricity, water, transportation, and other civic issues.</li>
-      <li>Complaints are reviewed by respective authorities and updated regularly.</li>
-      <li>You can track your complaint status using Complaint ID or mobile number.</li>
-      <li>For urgent issues, contact your local Panchayat office or helpline directly.</li>
-    </ul>
-    <button onclick="showSection('welcomeScreen')">Back to Home</button>
+    <button onclick="window.location.href='generalinfo.html'"> NEED MORE INFORMATION?</button>
   </section>
 
   <section id="adminSection" class="hidden">
     <h2>Admin Dashboard</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Complaint ID</th>
-          <th>Name/Village</th>
-          <th>Category</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="adminTable">
-        <tr><td colspan="5">No complaints yet</td></tr>
-      </tbody>
-    </table>
-    <button onclick="showSection('welcomeScreen')">Back to Home</button>
+    <button onclick="window.location.href='admindsh.html'"> Admin DASH</button>
   </section>
-</main>
+    
 
 <footer>
-  <p>© 2025 Rural E-Complaint System | Phone: +91-XXXXX-XXXXX | Email: complaints@grampanchayat.gov.in</p>
+  <p> Rural E-Complaint System <br> Phone: +91-XXXXX-XXXXX <br> Email: complaints@grampanchayat.gov.in<BR>
+  Office Hours: 9:00AM - 5:00PM(Mondat to Saturday) <br>&copy; 2023 Local Area Complaint Management System. All rights reserved. </p>
 </footer>
 
 <script>
