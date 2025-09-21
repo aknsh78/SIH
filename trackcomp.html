@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Track Complaint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f7f9fc;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 12px 22px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background: #357ab7;
+        }
+        #results {
+            margin-top: 20px;
+            min-height: 60px;
+        }
+        .complaint {
+            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+        }
+        .complaint:last-child {
+            border-bottom: none;
+        }
+        .back {
+         display: block;
+         margin: 0 auto;
+        height: 50px;
+        width: 190px;
+        padding: 11px 0;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Track Your Complaint</h2>
+        <input type="text" id="complaintId" placeholder="Enter Complaint ID" />
+        <button onclick="trackComplaint()">Track Status</button>
+        <div id="results"></div>
+         <div class="back"><button onclick="window.location.href='sih.html'">Back to Home</button></div>
+
+    </div>
+
+    <script>
+        // Simulated complaints database
+        const complaints = [
+            { id: 'C101', status: 'Pending', description: 'Electricity issue in zone 3' },
+            { id: 'C102', status: 'Resolved', description: 'Water supply interruption' },
+            { id: 'C103', status: 'In Progress', description: 'Road maintenance required' },
+            { id: 'C104', status: 'Resolved', description: 'Street light not working' }
+        ];
+
+        function trackComplaint() {
+            const input = document.getElementById('complaintId').value.trim();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (!input) {
+                resultsDiv.innerHTML = '<p>Please enter a Complaint ID.</p>';
+                return;
+            }
+
+            // Find matching complaint(s)
+            const found = complaints.filter(c => c.id.toLowerCase() === input.toLowerCase());
+
+            if (found.length === 0) {
+                resultsDiv.innerHTML = '<p>No complaints found for this ID.</p>';
+                return;
+            }
+
+            // Display complaints
+            found.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'complaint';
+                div.innerHTML = `<strong>Complaint ID:</strong> ${c.id}<br/>` +
+                                `<strong>Status:</strong> ${c.status}<br/>` +
+                                `<strong>Description:</strong> ${c.description}`;
+                resultsDiv.appendChild(div);
+            });
+        }
+        
+    </script>
+</body>
+</html>

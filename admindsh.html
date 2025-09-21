@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Admin Dashboard</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #fafbfc;
+        margin: 0;
+        padding: 40px 4vw;
+    }
+    h2 {
+        font-size: 2em;
+        color: #252d3d;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 32px;
+        background: white;
+    }
+    th, td {
+        padding: 20px 0;
+        text-align: center;
+    }
+    th {
+        background: #082850;
+        color: #fff;
+        font-size: 1.13em;
+        font-weight: bold;
+    }
+    td {
+        font-size: 1em;
+    }
+    .empty-row td {
+        color: #444;
+        text-align: left;
+        padding-left: 20px;
+    }
+    .back-btn {
+        margin-top: 22px;
+        background: #eee;
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 8px 24px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .back-btn:hover {
+        background: #e1e9f0;
+    }
+     .back {
+         display: block;
+         margin: 0 auto;
+        height: 50px;
+        width: 190px;
+        padding: 11px 0;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+        #description {
+        width: 100%;           /* full width of its container */
+        max-width: 500px;      /* limit max width for uniformity */
+        height: 140px;         /* fixed height similar to rows="7" */
+        padding: 12px 15px;    /* comfortable padding */
+        border-radius: 6px;
+        border: 1.5px solid #b93232;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+        resize: vertical;      /* allow resize only vertically */
+        box-sizing: border-box; /* includes padding and border in width/height */
+        transition: border-color 0.3s ease;
+        }
+
+        #description:focus {
+        border-color: #4a90e2;  /* highlight when focused */
+        outline: none;
+        box-shadow: 0 0 6px rgba(74, 144, 226, 0.6);
+        }
+          button {
+            width: 100%;
+            padding: 11px 0;
+            background: #3dbb23;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #004d99;
+        }
+</style>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Complaint ID</th>
+                <th>Name/Village</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="empty-row">
+                <td colspan="5">No complaints yet</td>
+            </tr>
+            <!-- If you have complaints, insert more <tr> rows here -->
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <div class="back"><button onclick="window.location.href='sih.html'">Back to Home</button></div>
+    
+   
+    
+</body>
+</html>

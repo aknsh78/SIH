@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lodge a Complaint</title>
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 360px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            padding: 30px 24px 18px 24px;
+        }
+        h2 {
+            text-align: center;
+            color: #0066cc;
+            margin-bottom: 18px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        button {
+            width: 100%;
+            padding: 11px 0;
+            background: #3dbb23;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #004d99;
+        }
+        .back {
+         display: block;
+         margin: 0 auto;
+        height: 50px;
+        width: 190px;
+        padding: 11px 0;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+        #description {
+        width: 100%;           /* full width of its container */
+        max-width: 500px;      /* limit max width for uniformity */
+        height: 140px;         /* fixed height similar to rows="7" */
+        padding: 12px 15px;    /* comfortable padding */
+        border-radius: 6px;
+        border: 1.5px solid #ccc;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+        resize: vertical;      /* allow resize only vertically */
+        box-sizing: border-box; /* includes padding and border in width/height */
+        transition: border-color 0.3s ease;
+        }
+
+        #description:focus {
+        border-color: #4a90e2;  /* highlight when focused */
+        outline: none;
+        box-shadow: 0 0 6px rgba(74, 144, 226, 0.6);
+        }
+
+    /* Remove justify-items and align-items as they don't apply here */
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Lodge a Complaint</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name" required />
+            <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" pattern="\d{10,}" required />
+            <input type="text" id="village" name="village" placeholder="Village/Town" required />
+            <input type="text" id="district" name="district" placeholder="District" required />
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option>Electricity</option>
+                <option>Water</option>
+                <option>Transportation</option>
+                <option>Others</option>
+            </select>
+            </select>
+        <textarea id="description" placeholder="Describe your problem" rows="7" required></textarea>
+
+    
+   
+      <p id="formResult" class="form-result"></p>
+    </form>
+  </section>
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+    <div class="back"><button onclick="window.location.href='sih.html'">Back to Home</button></div>
+    
+
+
+</body>
+</html>
